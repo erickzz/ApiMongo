@@ -13,7 +13,8 @@ public class Rh
     public string? Setor { get; set; }
     [BsonElement("Salário")]
     public double Salario { get; set; }
-    public string? Mes { get; set; }
-    [BsonElement("Ano")]
-    public int Ano { get; set; }
+    [BsonElement("MesLancamento")]
+    public string? MesLancamento { get; set; }
+    [BsonElement("AnoLancamento")]
+    public int AnoLancamento { get; set; }
 }

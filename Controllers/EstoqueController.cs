@@ -36,7 +36,7 @@ public class EstoqueController : ControllerBase
     [HttpGet("data")]
     public async Task<ActionResult<List<Estoque>>> GetByDate(string Mes, int Ano)
     {
-        var product = await _context.Products.Find(p => p.Mes == Mes && p.Ano == Ano).ToListAsync();
+        var product = await _context.Products.Find(p => p.MesLancamento == Mes && p.AnoLancamento == Ano).ToListAsync();
 
         if (product == null)
         {

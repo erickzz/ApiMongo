@@ -11,8 +11,8 @@ public class Estoque
     public int Quantidade { get; set; }
     [BsonElement("Preço")]
     public double Preco { get; set; }
-    [BsonElement("Mês")]
-    public string? Mes { get; set; }
-    [BsonElement("Ano")]
-    public int Ano { get; set; }
+    [BsonElement("MesLancamento")]
+    public string? MesLancamento { get; set; }
+    [BsonElement("AnoLancamento")]
+    public int AnoLancamento { get; set; }
 }
