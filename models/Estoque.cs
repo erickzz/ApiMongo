@@ -5,7 +5,7 @@ public class Estoque
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
-    [BsonElement("Name")]
+    [BsonElement("Nome")]
     public string? Nome { get; set; }
     [BsonElement("Quantidade")]
     public int Quantidade { get; set; }
