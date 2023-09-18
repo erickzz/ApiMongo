@@ -11,4 +11,5 @@ public class MongoDBContext
     }
 
     public IMongoCollection<Estoque> Products => _database.GetCollection<Estoque>("Estoque");
+    public IMongoCollection<Rh> Pessoas => _database.GetCollection<Rh>("Rh");
 }

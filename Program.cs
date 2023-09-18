@@ -11,7 +11,7 @@ builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection(nam
 builder.Services.AddSingleton<MongoDBContext>(serviceProvider =>
 {
     var settings = serviceProvider.GetRequiredService<IOptions<MongoDBSettings>>().Value;
-    return new MongoDBContext(settings.ConnectionString, settings.DatabaseName);
+    return new MongoDBContext(settings.ConnectionString!, settings.DatabaseName!);
 });
 
 // Add controllers
@@ -25,7 +25,7 @@ builder.Services.AddSwaggerGen(c =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 app.UseRouting();
 

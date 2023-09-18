@@ -21,9 +21,22 @@ public class EstoqueController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Estoque>> Get(string id)
+    public async Task<ActionResult<Estoque>> GetById(string id)
     {
         var product = await _context.Products.Find(p => p.Id == id).FirstOrDefaultAsync();
+
+        if (product == null)
+        {
+            return NotFound();
+        }
+
+        return product;
+    }
+
+    [HttpGet("date")]
+    public async Task<ActionResult<List<Estoque>>> GetByDate(string Mes, int Ano)
+    {
+        var product = await _context.Products.Find(p => p.Mes == Mes && p.Ano == Ano).ToListAsync();
 
         if (product == null)
         {
